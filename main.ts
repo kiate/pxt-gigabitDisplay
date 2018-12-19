@@ -4,11 +4,12 @@
 //% weight=100 color=#0fbc41 icon=""
 namespace gigabitDisplay {
     /**
-* makes the gigabit display the same as the micro:bit
+     * makes the gigabit display the same as the micro:bit
      */
-    //% block
-    export function mirrorDisplayOnGigabit(): void {
-        let item = neopixel.create(DigitalPin.P0, 25, NeoPixelMode.RGB)
+    //% blockId="gigabitDisplay" 
+    //% block="mirror display on gigabit at pin %pin"
+    export function mirrorDisplayOnGigabit(pin: DigitalPin): void {
+        let item = neopixel.create(pin, 25, NeoPixelMode.RGB)
         control.inBackground(function () {
             while (true) {
                 for (let i = 0; i <= 25 - 1; i++) {
